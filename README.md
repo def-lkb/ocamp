@@ -15,9 +15,9 @@ This will spawn a new bash session where the following subcommands are enabled.
 
     $ ocamp hipp <command>
 
-Will memoize the output and exit status of <command>.
-Later calls to the same <command> won't lead to actual execution, but just to a duplication of its previous output.
-Concurrent calls to <command> will just share the same process, the beginning of the output being replayed to later callers.
+Will memoize the output and exit status of `<command>`.
+Later calls to the same `<command>` won't lead to actual execution, but just to a duplication of its previous output.
+Concurrent calls to `<command>` will just share the same process, the beginning of the output being replayed to later callers.
 
 The identity of a command is defined by its arguments and working directory.
 
@@ -25,15 +25,15 @@ The identity of a command is defined by its arguments and working directory.
 
     $ ocamp stir <command>
 
-Indicate potential changes in the output if <command> was rerun.
-Later calls to `hipp` will recompute <command> as if it was not yet memoized.
+Indicate potential changes in the output if `<command>` was rerun.
+Later calls to `hipp` will recompute `<command>` as if it was not yet memoized.
 
 ## (un)follow
 
     $ ocamp follow <command>
 
-First, <command> is memoized if it was not the case yet.
-Then changes to dependencies of <command> will trigger a reevaluation.
+First, `<command>` is memoized if it was not the case yet.
+Then changes to dependencies of `<command>` will trigger a reevaluation.
 Use `stir` to notify a change.
 
 (to follow is an hipp/stir reaction).
@@ -42,7 +42,7 @@ Use `stir` to notify a change.
 
     $ ocamp pull <command>
 
-Closely related to `hipp`, but instead of marking dependency on the output of <command>, the dependency applies to the "effects" of <command>.
+Closely related to `hipp`, but instead of marking dependency on the output of `<command>`, the dependency applies to the "effects" of `<command>`.
 
 Thus, if `stir` is used:
 - all pullers will be reevaluated.
